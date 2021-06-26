@@ -6,6 +6,7 @@ public class TwoSum {
 
     // Given an array of integers nums and an integer target,
     // return indices of the numbers such that they add up to target.
+    // assume that only one possible combination of numbers is available
 
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 56, 7, 8, 10};
