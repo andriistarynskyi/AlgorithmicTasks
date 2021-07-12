@@ -18,7 +18,6 @@ public class ScrambleGame {
 
     public static boolean isWordCreatable(List<Character> chars, String word, Character wildCard) {
         Map<Character, Integer> map = new HashMap<>();
-        boolean bool = false;
         for (Character ch : chars) {
             if (map.containsKey(ch)) {
                 map.put(ch, map.get(ch) + 1);
@@ -27,20 +26,14 @@ public class ScrambleGame {
             }
         }
         for (Character c : word.toCharArray()) {
-            if (!map.containsKey(c) || chars.size() == 0) {
+            if ((!map.containsKey(c) || chars.size() == 0) ||
+                    (map.containsKey(c) && map.get(c) == 0)) {
                 return false;
-            } else if (map.containsKey(c) && map.get(c) != 0) {
+            } else if ((map.containsKey(c) && map.get(c) != 0) &&
+                    (map.containsKey(wildCard) && map.get(c) != 0)) {
                 map.put(c, map.get(c) - 1);
-                bool = true;
-            } else if (map.containsKey(wildCard) && map.get(wildCard) != 0) {
-                map.put(wildCard, map.get(wildCard) - 1);
-                bool = true;
-            } else if (map.get(c) == 0) {
-                return false;
-            } else {
-                bool = false;
             }
         }
-        return bool;
+        return true;
     }
 }

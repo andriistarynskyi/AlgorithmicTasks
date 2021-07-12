@@ -17,8 +17,8 @@ public class RenderTemplate {
     public static String stringParser(String str, Map<String, String> map) {
         String[] arr = str.split(" ");
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i].contains("{{")) {
-               String tempStr = arr[i].replaceAll("[^a-zA-Z]","");
+            if (arr[i].contains("{{") && arr[i].contains("}}")) {
+                String tempStr = arr[i].replaceAll("[^a-zA-Z]", "");
                 if (map.containsKey(tempStr)) {
                     arr[i] = map.get(tempStr);
                 }
