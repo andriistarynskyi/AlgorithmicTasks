@@ -4,7 +4,7 @@ package Algorithms;
 public class TwoNumbers {
     public static void main(String[] args) {
         //find pair of numbers which will be equal to target, assume that only one pair exist
-        //give array of ints is sorted
+        //given array of ints is sorted
         int[] arr = new int[]{2, 7, 11, 15};
         int target = 9;
         for (int i : twoSum(arr, target)) {
