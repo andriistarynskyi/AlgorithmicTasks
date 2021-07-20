@@ -6,9 +6,7 @@ public class MostPopularAnimal {
     public static void main(String[] args) {
         //get most popular animal from the array
         String[] animals = new String[]{"dog", "cat", "fish", "cat", "dog", "cat", "dog"};
-
         System.out.println(getMostPopularAnimal(animals));
-
     }
 
     public static String getMostPopularAnimal(String[] animals) {
