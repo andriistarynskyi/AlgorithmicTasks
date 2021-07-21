@@ -1,6 +1,7 @@
 package Algorithms;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class TextAssessment {
 //    ths task was taken from this web-site
@@ -57,24 +58,22 @@ public class TextAssessment {
         //replace all punctuation with spaces
         String[] words = text.replaceAll("[^a-zA-Z0-9]", " ").split(" ");
 
-        //add words to exclude to the map with negative value;
+        //add words to exclude to the map with negative values;
         Map<String, Integer> map = new HashMap<>(putWordsTpExclude(wordsToExclude));
 
         //add words from text and count occurrences
         for (String word : words) {
-            if (!word.isBlank() || word.isEmpty()) {
-                if (map.containsKey(word) && map.get(word) < 0) {
-                    continue;
-                } else if (map.containsKey(word.toLowerCase()) && map.get(word.toLowerCase()) > 0) {
-                    map.put(word.toLowerCase(), map.get(word.toLowerCase()) + 1);
-                } else {
-                    map.put(word, 1);
-                }
+            if (word.isEmpty() || word.isBlank() || map.containsKey(word) && map.get(word) < 0) {
+                continue;
+            } else if (map.containsKey(word.toLowerCase()) && map.get(word.toLowerCase()) > 0) {
+                map.put(word.toLowerCase(), map.get(word.toLowerCase()) + 1);
+            } else {
+                map.put(word, 1);
             }
         }
+
         int maxValue = getMaxValue(map);
         map.values().removeIf(x -> x < maxValue);
-
         return new ArrayList<>(map.keySet());
     }
 
