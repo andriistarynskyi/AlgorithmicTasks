@@ -14,9 +14,9 @@ public class ValidateWords {
 
     public static String[] solution(String[] words) {
         List<String> result = new ArrayList<>();
-        String firstRow = "qwertyuiop";
-        String secondRow = "asdfghjkl";
-        String thirdRow = "zxcvbnm";
+        String firstRow = "qwertyuiop"; // 1st row on keyboard
+        String secondRow = "asdfghjkl"; // 2nd row on keyboard
+        String thirdRow = "zxcvbnm"; // 3rd row on keyboard
         String currentRow = "";
         for (int i = 0; i < words.length; i++) {
             String ch = String.valueOf(words[i].toLowerCase().charAt(0));
