@@ -3,13 +3,14 @@ package Algorithms;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ValidateWords {
     public static void main(String[] args) {
         //return the list of words which can be made out only one row of letters
 
         String[] words = new String[]{"Hello", "Alaska", "Dad", "Peace"};
-        System.out.println(Arrays.stream(solution(words)).toList());
+        System.out.println(Arrays.stream(solution(words)).collect(Collectors.toList()));
     }
 
     public static String[] solution(String[] words) {
