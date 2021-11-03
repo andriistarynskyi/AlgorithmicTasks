@@ -13,8 +13,6 @@ public class MostPopularAnimal {
         if (animals.length == 0) {
             return "Array is empty";
         }
-        //assuming that if we have multiply animals with the same quantity of occurrences,
-        //we will return first animal.
         int counter = 0;
         String result = "";
         Map<String, Integer> map = new LinkedHashMap<>();
