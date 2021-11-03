@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class UniqueElemCounter {
     public static void main(String[] args) {
-        List<Integer> ints = Arrays.asList(1, 2, 3, 5, 5, 5, 5, 6, 89, 110, 10);
+        List<Integer> ints = Arrays.asList(11, 2, 3, 4, 5, 1, 2, 2, 2;
         System.out.println(getUniqueElemCount(ints));
     }
 
